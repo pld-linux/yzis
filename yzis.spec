@@ -14,6 +14,7 @@ BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	unsermake >= 040805
 BuildRequires:	lua50-devel
+BuildRequires:	libmagic-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
