@@ -5,9 +5,9 @@ Version:	M3
 Release:	1
 License:	GPL
 Group:		Applications/Editors/Vim	
-Source0:	http://yzis.org.free.fr/releases/yzis-M3.tar.bz2	
+Source0:	http://yzis.org.free.fr/releases/%{name}-%{version}.tar.bz2
 # Source0-md5:	7e2d41776aa419a2bfe10ec6e69cf767
-URL:		http://www.yzis.org
+URL:		http://www.yzis.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
