@@ -3,7 +3,7 @@ Summary(pl):	yzis to edytor podobny do vima
 Name:		yzis
 Version:	M3
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		Applications/Editors
 Source0:	http://yzis.org.free.fr/releases/%{name}-%{version}.tar.bz2
 # Source0-md5:	7e2d41776aa419a2bfe10ec6e69cf767
@@ -16,6 +16,7 @@ BuildRequires:	unsermake >= 040805
 BuildRequires:	lua50-devel
 BuildRequires:	libmagic-devel
 BuildRequires:	pslib-devel
+BuildRequires:	ncurses-devel >= 5.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -44,15 +45,10 @@ yzis to podobny do vima edytor oparty na technologii yzis. Oferuje:
 
 
 %prep
-#setup -q -n %{name}
 %setup -q
 
 %build
 cp -f %{_datadir}/automake/config.sub admin
-#export UNSERMAKE=%{_datadir}/unsermake/unsermake
-#{__make} -f admin/Makefile.common cvs
-
-
 export CPPFLAGS="-I/usr/include/ncurses %{rpmcflags}"
 %configure \
 %if "%{_lib}" == "lib64"
@@ -73,7 +69,9 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir} \
-	kdelnkdir=%{_desktopdir} \
+	kdelnkdir=%{_desktopdir}
+
+mv -f $RPM_BUILD_ROOT%{_datadir}/applnk/*/* $RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang %{name} --with-kde
 
@@ -83,8 +81,12 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_pixmapsdir}/*
-%{_desktopdir}/*
-%{_iconsdir}/*/*/apps/%{name}.png
-%{_datadir}/mimelnk/application/*
-%{_datadir}/apps/%{name}
+%attr(755,root,root) %{_libdir}/lib*.so.*
+%attr(755,root,root) %{_libdir}/kde3/lib*.so
+%{_libdir}/kde3/lib*.la
+%{_desktopdir}/*.desktop
+%{_datadir}/apps/*%{name}*
+%{_datadir}/config.kcfg/*
+%{_iconsdir}/*/*/apps/*.png
+%{_datadir}/services/*.*
+%{_datadir}/%{name}
