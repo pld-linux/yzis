@@ -32,7 +32,6 @@ application and also features:
 - marks and visual mark support
 - indent support: >, >,
 
-
 %description -l pl
 yzis to podobny do vima edytor oparty na technologii yzis. Oferuje:
 - obs³ugê wielu buforów
@@ -41,8 +40,6 @@ yzis to podobny do vima edytor oparty na technologii yzis. Oferuje:
 - wy¶wiatle tekstu RTL
 - dope³nianie tekstu
 - obs³ugê makr i wciêæ
-
-
 
 %prep
 %setup -q
@@ -57,7 +54,6 @@ export CPPFLAGS="-I/usr/include/ncurses %{rpmcflags}"
 	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
 	--with-qt-libraries=%{_libdir} \
 	--with-lua-includes=%{_includedir}/lua50
-
 
 %{__make}
 
