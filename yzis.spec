@@ -1,5 +1,5 @@
-Summary:	yzis is a vim-like editor
-Summary(pl):	yzis to edytor podobny do vima
+Summary:	yzis - a vim-like editor
+Summary(pl):	yzis - edytor podobny do vima
 Name:		yzis
 Version:	M3
 Release:	1
@@ -11,12 +11,12 @@ URL:		http://www.yzis.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
+BuildRequires:	libmagic-devel
+BuildRequires:	lua50-devel
+BuildRequires:	ncurses-devel >= 5.4
+BuildRequires:	pslib-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	unsermake >= 040805
-BuildRequires:	lua50-devel
-BuildRequires:	libmagic-devel
-BuildRequires:	pslib-devel
-BuildRequires:	ncurses-devel >= 5.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,19 +33,23 @@ application and also features:
 - indent support: >, >,
 
 %description -l pl
-yzis to podobny do vima edytor oparty na technologii yzis. Oferuje:
-- obs³ugê wielu buforów
-- pod¶wietlanie sk³adni
-- wsparcie dla poleceñ vima
-- wy¶wiatle tekstu RTL
-- dope³nianie tekstu
-- obs³ugê makr i wciêæ
+yzis to podobny do vima edytor napisany od zera w oparciu o
+technologiê yzis. Obs³uguje wiele buforów, pod¶wietlanie sk³adni,
+podstawowe polecenia vima. Przychodzi z mi³± aplikacj± w trybie
+konsolowym, a ponadto oferuje:
+- obs³ugê pisma od prawej do lewej
+- obs³ugê dope³niania tekstu
+- poprawki i ulepszenia wyszukiwania: n, N, *, g*, #, g#
+- obs³ugê prawie wszystkich zakresów vima: %, , :, ',...
+- obs³ugê makr
+- obs³ugê znaczników i wizualnego zaznaczania
+- obs³ugê wciêæ: >, >,
 
 %prep
 %setup -q
 
 %build
-cp -f %{_datadir}/automake/config.sub admin
+cp -f /usr/share/automake/config.sub admin
 export CPPFLAGS="-I/usr/include/ncurses %{rpmcflags}"
 %configure \
 %if "%{_lib}" == "lib64"
