@@ -1,10 +1,10 @@
-Summary:	yzis is a vim-like editor 
+Summary:	yzis is a vim-like editor
 Summary(pl):	yzis to edytor podobny do vima
 Name:		yzis
 Version:	M3
 Release:	1
 License:	GPL
-Group:		Applications/Editors/Vim	
+Group:		Applications/Editors
 Source0:	http://yzis.org.free.fr/releases/%{name}-%{version}.tar.bz2
 # Source0-md5:	7e2d41776aa419a2bfe10ec6e69cf767
 URL:		http://www.yzis.org/
@@ -15,10 +15,14 @@ BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	unsermake >= 040805
 BuildRequires:	lua50-devel
 BuildRequires:	libmagic-devel
+BuildRequires:	pslib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Kyzis is a vim-like editor fully rewritten from scratch based on the yzis framework. It already features multibuffer, syntax highlighting, basic vim commands. Yzis also comes with a nice console mode application and also features:
+yzis is a vim-like editor fully rewritten from scratch based on the
+yzis framework. It already features multibuffer, syntax highlighting,
+basic vim commands. Yzis also comes with a nice console mode
+application and also features:
 - right-to-left support
 - text completion support
 - search bugfixes and improvements: n, N, *, g*, #, g#
@@ -29,7 +33,7 @@ Kyzis is a vim-like editor fully rewritten from scratch based on the yzis framew
 
 
 %description -l pl
-Kyzis to podobny do vima edytor oparty na technologii yzis. Oferuje:
+yzis to podobny do vima edytor oparty na technologii yzis. Oferuje:
 - obs³ugê wielu buforów
 - pod¶wietlanie sk³adni
 - wsparcie dla poleceñ vima
@@ -37,15 +41,19 @@ Kyzis to podobny do vima edytor oparty na technologii yzis. Oferuje:
 - dope³nianie tekstu
 - obs³ugê makr i wciêæ
 
+
+
 %prep
 #setup -q -n %{name}
 %setup -q
 
 %build
-cp -f /usr/share/automake/config.sub admin
-export UNSERMAKE=/usr/share/unsermake/unsermake
-%{__make} -f admin/Makefile.common cvs
+cp -f %{_datadir}/automake/config.sub admin
+#export UNSERMAKE=%{_datadir}/unsermake/unsermake
+#{__make} -f admin/Makefile.common cvs
 
+
+export CPPFLAGS="-I/usr/include/ncurses %{rpmcflags}"
 %configure \
 %if "%{_lib}" == "lib64"
 	--enable-libsuffix=64 \
@@ -53,6 +61,7 @@ export UNSERMAKE=/usr/share/unsermake/unsermake
 	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
 	--with-qt-libraries=%{_libdir} \
 	--with-lua-includes=%{_includedir}/lua50
+
 
 %{__make}
 
