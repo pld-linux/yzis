@@ -13,6 +13,7 @@ BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	unsermake >= 040805
+BuildRequires:	lua50-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,7 +50,9 @@ export UNSERMAKE=/usr/share/unsermake/unsermake
 	--enable-libsuffix=64 \
 %endif
 	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
-	--with-qt-libraries=%{_libdir}
+	--with-qt-libraries=%{_libdir} \
+	--with-lua-includes=%{_includedir}/lua50
+
 %{__make}
 
 %install
