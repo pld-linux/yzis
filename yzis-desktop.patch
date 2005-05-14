@@ -1,0 +1,14 @@
+--- yzis-M3/kyzis/kyzis.desktop.orig	2005-05-14 09:47:55.000000000 +0200
++++ yzis-M3/kyzis/kyzis.desktop	2005-05-14 09:49:31.000000000 +0200
+@@ -5,7 +5,10 @@
+ Icon=kyzis
+ Type=Application
+ DocPath=kyzis/kyzis.html
++Comment=Yzis Frontend for KDE
++Comment[pl]=Nakładka na Yzis dla środowiska KDE
+ GenericName=Yzis Frontend for KDE
+-Terminal=0
++GenericName[pl]=Nakładka na Yzis dla środowiska KDE
++Terminal=false
+ Categories=Qt;KDE;TextEditor
+ MimeType=text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/rdf;
