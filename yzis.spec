@@ -2,11 +2,12 @@ Summary:	yzis - a vim-like editor
 Summary(pl):	yzis - edytor podobny do vima
 Name:		yzis
 Version:	M3
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Editors
 Source0:	http://yzis.org.free.fr/releases/%{name}-%{version}.tar.bz2
 # Source0-md5:	7e2d41776aa419a2bfe10ec6e69cf767
+Patch0:		%{name}-desktop.patch
 URL:		http://www.yzis.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -47,6 +48,7 @@ konsolowym, a ponadto oferuje:
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
@@ -72,6 +74,7 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 	kdelnkdir=%{_desktopdir}
 
 mv -f $RPM_BUILD_ROOT%{_datadir}/applnk/*/* $RPM_BUILD_ROOT%{_desktopdir}
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
 
 %find_lang %{name} --with-kde
 
