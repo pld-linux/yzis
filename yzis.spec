@@ -52,7 +52,7 @@ konsolowym, a ponadto oferuje:
 
 %build
 cp -f /usr/share/automake/config.sub admin
-export CPPFLAGS="-I/usr/include/ncurses %{rpmcflags}"
+export CPPFLAGS="-I%{_includedir}/ncurses %{rpmcflags}"
 %configure \
 %if "%{_lib}" == "lib64"
 	--enable-libsuffix=64 \
