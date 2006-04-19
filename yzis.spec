@@ -2,7 +2,7 @@ Summary:	yzis - a vim-like editor
 Summary(pl):	yzis - edytor podobny do vima
 Name:		yzis
 Version:	M3
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/Editors
 Source0:	http://yzis.org.free.fr/releases/%{name}-%{version}.tar.bz2
