@@ -1,0 +1,26 @@
+diff -urN yzis-M3/kyzis/src/viewwidget.h yzis-M3.new/kyzis/src/viewwidget.h
+--- yzis-M3/kyzis/src/viewwidget.h	2005-02-06 14:40:30.000000000 +0100
++++ yzis-M3.new/kyzis/src/viewwidget.h	2006-10-12 13:54:06.000000000 +0200
+@@ -77,8 +77,8 @@
+ 		 */
+ 		void setkid( int kId ) { mkId = kId; }
+ 
+-		void KYZisView::wheelEvent( QWheelEvent * e );
+-		void KYZisView::contextMenuEvent( QContextMenuEvent * e );
++		void wheelEvent( QWheelEvent * e );
++		void contextMenuEvent( QContextMenuEvent * e );
+ 
+ 		/**
+ 		 * @internal
+diff -urN yzis-M3/libyzis/linesearch.h yzis-M3.new/libyzis/linesearch.h
+--- yzis-M3/libyzis/linesearch.h	2004-12-17 08:45:53.000000000 +0100
++++ yzis-M3.new/libyzis/linesearch.h	2006-10-12 13:48:52.000000000 +0200
+@@ -70,7 +70,7 @@
+ 	/**
+ 	 * Searches for previously searched character in opposite direction
+ 	 */
+-	YZCursor YZLineSearch::searchAgainOpposite( bool &found, unsigned int times );
++	YZCursor searchAgainOpposite( bool &found, unsigned int times );
+ 	
+ 	/**
+ 	 * Defines types of searches for history
