@@ -1,5 +1,5 @@
 Summary:	yzis - a vim-like editor
-Summary(pl):	yzis - edytor podobny do vima
+Summary(pl.UTF-8):   yzis - edytor podobny do vima
 Name:		yzis
 Version:	M3
 Release:	4
@@ -34,18 +34,18 @@ application and also features:
 - marks and visual mark support
 - indent support: >, >,
 
-%description -l pl
+%description -l pl.UTF-8
 yzis to podobny do vima edytor napisany od zera w oparciu o
-technologiê yzis. Obs³uguje wiele buforów, pod¶wietlanie sk³adni,
-podstawowe polecenia vima. Przychodzi z mi³± aplikacj± w trybie
+technologiÄ™ yzis. ObsÅ‚uguje wiele buforÃ³w, podÅ›wietlanie skÅ‚adni,
+podstawowe polecenia vima. Przychodzi z miÅ‚Ä… aplikacjÄ… w trybie
 konsolowym, a ponadto oferuje:
-- obs³ugê pisma od prawej do lewej
-- obs³ugê dope³niania tekstu
+- obsÅ‚ugÄ™ pisma od prawej do lewej
+- obsÅ‚ugÄ™ dopeÅ‚niania tekstu
 - poprawki i ulepszenia wyszukiwania: n, N, *, g*, #, g#
-- obs³ugê prawie wszystkich zakresów vima: %, , :, ',...
-- obs³ugê makr
-- obs³ugê znaczników i wizualnego zaznaczania
-- obs³ugê wciêæ: >, >,
+- obsÅ‚ugÄ™ prawie wszystkich zakresÃ³w vima: %, , :, ',...
+- obsÅ‚ugÄ™ makr
+- obsÅ‚ugÄ™ znacznikÃ³w i wizualnego zaznaczania
+- obsÅ‚ugÄ™ wciÄ™Ä‡: >, >,
 
 %prep
 %setup -q
