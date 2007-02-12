@@ -1,5 +1,5 @@
 Summary:	yzis - a vim-like editor
-Summary(pl.UTF-8):   yzis - edytor podobny do vima
+Summary(pl.UTF-8):	yzis - edytor podobny do vima
 Name:		yzis
 Version:	M3
 Release:	4
