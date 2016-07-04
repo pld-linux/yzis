@@ -9,7 +9,7 @@ Source0:	http://yzis.org.free.fr/releases/%{name}-%{version}.tar.bz2
 # Source0-md5:	7e2d41776aa419a2bfe10ec6e69cf767
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-gcc-4.1.patch
-URL:		http://www.yzis.org/
+URL:		https://sources.freehackers.org/Yzis/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
